@@ -42,4 +42,31 @@ class LibraryTest < MiniTest::Test
       bossypants_details = @my_library.books[0]
       assert_equal(bossypants_details, @my_library.title_returns_details("Bossypants"))
     end
+
+    def test_title_returns_rental_details
+      bossypants_rental_details = {
+        student_name: "Caroline Hatwell",
+        due_date: "10/04/2017"
+      }
+      assert_equal(bossypants_rental_details, @my_library.title_returns_rental_details("Bossypants"))
+    end
+
+    def test_update_rental_details
+      bossypants_new_rental_details = {
+        student_name: "Eun-Joo Kim",
+        due_date: "08/04/2017"
+      }
+      assert_equal(bossypants_new_rental_details, @my_library.update_rental_details("Bossypants", "Eun-Joo Kim", "08/04/2017"))
+    end
+
+    def test_add_by_title
+      new_book = {title: "Great Expectations",
+                  rental_details: {
+                    student_name: "",
+                    due_date: ""
+                    }
+                  }
+      assert_equal(new_book, @my_library.add_new_book_with_title("Great Expectations"))
+
+    end
 end
