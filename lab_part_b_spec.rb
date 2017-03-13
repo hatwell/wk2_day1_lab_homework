@@ -37,5 +37,10 @@ class SportsTeamTest < MiniTest::Test
     assert_equal(@team.players.last, "Channing Frye")
   end
 
+  def test_add_points
+    @team.win_or_lose(:win)
+    assert_equal(1, @team.points)
+  end
+
 
 end
