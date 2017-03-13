@@ -27,4 +27,14 @@ class StudentTest < MiniTest::Test
     @student_2.set_cohort(16)
     assert_equal(16, @student_2.cohort)
   end
+
+  def test_student_can_talk
+    @student_1.talk("I am talking")
+    assert_equal(String, @student_1.talk("Words").class)
+  end
+
+  def test_say_favourite_language
+    @student_1.say_favourite_language("Java")
+    assert_equal("I love Java", @student_1.say_favourite_language("Java"))
+  end
 end

@@ -1,0 +1,3 @@
+class SportsTeam
+
+end

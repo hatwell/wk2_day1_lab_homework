@@ -20,6 +20,11 @@ class Student
        @cohort = new_cohort
      end
 
+     def talk(words)
+       return "#{@name} says #{words}"
+     end
 
-
+     def say_favourite_language(language)
+       return "I love #{language}"
+     end
 end
